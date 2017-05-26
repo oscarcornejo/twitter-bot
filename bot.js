@@ -1,5 +1,5 @@
 // Dependencies =========================
-var
+var  
     twit = require('twit'),
     config = require('./config');
 
@@ -7,6 +7,7 @@ var Twitter = new twit(config);
 
 // Use Streams API for interacting with a USER ==========
 // set up a user stream
+
 var stream = Twitter.stream('user');
 
 // FOLLOW-Reply BOT ===========================
@@ -43,9 +44,9 @@ function tweetNow(tweetTxt) {
 // RETWEET BOT ==========================
 
 // find latest tweet according the query 'q' in params
-var retweet = function() {
+var retweet = function() {  
     var params = {
-        q: '#nodejs, #Nodejs', 'reactjs', 'Reactjs', 'Angular', 'Angularjs', 'javascript', 'Javascript'  // REQUIRED
+        q: '#nodejs, #Nodejs, #reactjs, #Reactjs, #angular, #Angular',  // REQUIRED
         result_type: 'recent',
         lang: 'en'
     }
@@ -75,16 +76,16 @@ var retweet = function() {
 }
 
 // grab & retweet as soon as program is running...
-retweet();
+retweet();  
 // retweet in every 10 minutes
 setInterval(retweet, 600000);
 
 // FAVORITE BOT====================
 
 // find a random tweet and 'favorite' it
-var favoriteTweet = function(){
+var favoriteTweet = function(){  
   var params = {
-      q: '#nodejs, #Nodejs', 'reactjs', 'Reactjs', 'Angular', 'Angularjs', 'javascript', 'Javascript' // REQUIRED
+      q: '#nodejs, #Nodejs, #reactjs, #Reactjs, #angular, #Angular',  // REQUIRED
       result_type: 'recent',
       lang: 'en'
   }
@@ -111,12 +112,12 @@ var favoriteTweet = function(){
   });
 }
 // grab & 'favorite' as soon as program is running...
-favoriteTweet();
+favoriteTweet();  
 // 'favorite' a tweet in every 60 minutes
 setInterval(favoriteTweet, 3600000);
 
 // function to generate a random tweet tweet
-function ranDom (arr) {
+function ranDom (arr) {  
   var index = Math.floor(Math.random()*arr.length);
   return arr[index];
 };
