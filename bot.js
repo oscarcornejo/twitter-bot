@@ -17,13 +17,13 @@ stream.on('follow', followed);
 
 // ...trigger the callback
 function followed(event) {  
-  console.log('Follow Event is running');
+  console.log('Evento Follow esta en ejecución');
   //get their twitter handler (screen name)
   var
     name = event.source.name,
     screenName = event.source.screen_name;
   // function that replies back to the user who followed
-  tweetNow('@' + screenName + ' Thank you for the follow up.');
+  tweetNow('@' + screenName + ' Gracias por el Follow.');
 }
 
 // function definition to tweet back to user who followed
@@ -33,10 +33,10 @@ function tweetNow(tweetTxt) {
   }
   Twitter.post('statuses/update', tweet, function(err, data, response) {
     if(err){
-      console.log("Error in Replying");
+      console.log("Error al responder");
     }
     else{
-      console.log("Gratitude shown successfully");
+      console.log("La gratitud se muestra con éxito");
     }
   });
 }
@@ -60,17 +60,17 @@ var retweet = function() {
                 id: retweetId
             }, function(err, response) {
                 if (response) {
-                    console.log('Retweeted!!!');
+                    console.log('Retweeted!');
                 }
                 // if there was an error while tweeting
                 if (err) {
-                    console.log('Something went wrong while RETWEETING... Duplication maybe...');
+                    console.log('Algo salió mal mientras se Retuitiava... Quizás el tuit esta duplicado.');
                 }
             });
         }
         // if unable to Search a tweet
         else {
-          console.log('Something went wrong while SEARCHING...');
+          console.log('Se ha producido un error al BUSCAR...');
         }
     });
 }
@@ -102,10 +102,10 @@ var favoriteTweet = function(){
       Twitter.post('favorites/create', {id: randomTweet.id_str}, function(err, response){
         // if there was an error while 'favorite'
         if(err){
-          console.log('CANNOT BE FAVORITE... Error');
+          console.log('Error al dar FAVORITO... ');
         }
         else{
-          console.log('FAVORITED... Success!!!');
+          console.log('Éxito al dar FAVORITO!');
         }
       });
     }

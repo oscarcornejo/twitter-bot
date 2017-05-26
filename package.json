@@ -1,7 +1,7 @@
 {
   "name": "bot",
   "version": "1.0.0",
-  "description": "Bot para Twitter",
+  "description": "Bot para retuitiar en Twitter",
   "main": "bot.js",
   "dependencies": {
     "twit": "^2.2.5"
@@ -15,10 +15,9 @@
     "node",
     "js",
     "twitter",
-    "bot",
-    "debashis",
-    "barman"
+    "bot"
   ],
   "author": "Oscar Cornejo",
+  "email" : "oscarcornejo10@gmail.com",
   "license": "ISC"
 }
