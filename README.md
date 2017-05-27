@@ -17,7 +17,7 @@ npm install
 npm start
 ```
 
-## Instalación en Heroku con la cuenta ya creada
+## Deploy en Heroku con cuenta ya creada
 ```
 $ heroku login
 $ git init
