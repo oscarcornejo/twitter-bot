@@ -20,8 +20,43 @@ consumer_secret: 'AGREGAR-tu-consumer_secret',
 access_token: 'AGREGAR-tu-access_token',  
 access_token_secret: 'AGREGAR-tu-access_token_secret'
 ```
-
 Estos datos son entregados por Twitter al momento de crear dicha aplicación.
+
+## ¿Dónde colocar las palabras claves o #Hashtag para retuitear?
+
+En la línea 49 del archivo bot.js se pasan algunos parámetros o propiedades de los cuales "q" es quién se encarga de nuestras búsquedas. Cualquier valor que entreguemos a esta propiedad, nuestro robot se encargará de buscar los tuits y Retuitear dichos post en base a este criterio. 
+
+Ej: 
+```
+var retweet = function() {
+  var params = {
+    q: '#nodejs, #Nodejs',
+    result_type: 'recent',
+    lang: 'en'    
+  }
+  ...
+}
+```
+
+Si deseas agregar más de dos criterios de búsquedas, agregar 'OR' entre cada parámetro:
+
+```
+var retweet = function() {  
+    var params = {
+        q: '#reactjs OR #Reactjs OR #nodejs OR #Nodejs OR angular OR Angular',  // REQUIRED
+        result_type: 'recent',
+        lang: 'en'
+    }
+    ...
+}
+    
+```
+
+Como ven, la única propiedad obligatoria es "q", "result_type" y "lang" son opcionales, donde:
+
+* result_type: Notifica sólo para buscar los últimos tuits o aquellos mensajes de twitter que han ocurrido desde que nuestro robot ha comenzado, es decir, los últimos retuits. Puede cambiar de 'recent' a 'popular'.
+
+* lang: Es el idioma de los tuits a buscar. En mi caso dejé la búsqueda en Ingles o 'en'.
 
 ## Instalación
 ```
