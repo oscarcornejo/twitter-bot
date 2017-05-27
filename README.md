@@ -21,7 +21,7 @@ access_token: 'AGREGAR-tu-access_token',
 access_token_secret: 'AGREGAR-tu-access_token_secret'
 ```
 
-Estos datos son entregados por Twiiter al momento de crear dicha aplicación.
+Estos datos son entregados por Twitter al momento de crear dicha aplicación.
 
 ## Instalación
 ```
