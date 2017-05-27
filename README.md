@@ -38,7 +38,7 @@ var retweet = function() {
 }
 ```
 
-Si deseas agregar más de dos criterios de búsquedas, agregar 'OR' entre cada parámetro:
+Si deseas agregar más de dos criterios de búsquedas, incluir 'OR' entre cada parámetro:
 
 ```
 var retweet = function() {  
